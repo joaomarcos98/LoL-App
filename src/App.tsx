@@ -1,7 +1,15 @@
+import { QueryClientProvider } from "react-query";
+
+import { queryClient } from "./infra/query/client";
+import { Example } from "./modules/example";
+
 
 function App() {
+
     return (
-        <h1>a</h1>
+        <QueryClientProvider client={queryClient}>
+            <Example />
+        </QueryClientProvider>
     )
 }
 
