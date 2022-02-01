@@ -24,6 +24,9 @@ export const Example = () => {
         }
     }, [data]);
 
+    console.log(heroes);
+    
+
     return (
         <Container>
             <Content>
