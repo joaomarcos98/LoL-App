@@ -1,6 +1,9 @@
 import { Hero } from "../../models/Champion";
 import { HeroCardStyle } from "./styled";
 
+import favoriteEmpty from "../../ui/assets/favorite_border.svg"
+import favoriteFull from "../../ui/assets/favorite.svg"
+
 
 interface HeroCardProps {
     hero: Hero
@@ -20,10 +23,12 @@ export const HeroCard = ({ hero }: HeroCardProps) => {
                 alt={hero.name}
             />
             <h2 >{hero.name}</h2>
-            <div>
-                <h4>{hero.title}</h4>
-                <span>favorite</span>
+            <div className="favorite">
+                <img src={
+                    favoriteFull
+                } alt="favoritar" />
             </div>
+            <h4>{hero.title}</h4>
         </HeroCardStyle>
     )
 }
