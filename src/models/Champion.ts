@@ -1,4 +1,4 @@
-export type Champion = {
+export type Hero = {
     name: string;
     title: string;
     tags: string[];

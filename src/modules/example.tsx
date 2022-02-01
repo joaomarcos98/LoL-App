@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
+import { HeroCard, HeroList } from "../components";
 import { useHeroes } from "../hooks/useHeroes";
-import { Champion } from "../models/Champion";
+import { Hero } from "../models/Champion";
+import { Container, Content } from "./styles";
 
 
 const url = `http://ddragon.leagueoflegends.com/cdn/12.2.1/data/pt_BR/champion.json`;
-let imgUrl = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
 export const Example = () => {
 
-    const [heroes, setHeroes] = useState<Champion[]>([]);
+    const [heroes, setHeroes] = useState<Hero[]>([]);
 
     const { data, isLoading, error } = useHeroes(url);
 
@@ -23,20 +24,15 @@ export const Example = () => {
         }
     }, [data]);
 
-    console.log(heroes);
-
     return (
-        <div>
-            {heroes?.map(hero => (
-                <div key={hero.key}>
-                    <img
-                        src={`${imgUrl}${hero.id}_0.jpg`}
-                        alt={hero.name}
-                    />
-                    <p >{hero.name}</p>
-                </div>
-
-            ))}
-        </div>
+        <Container>
+            <Content>
+                <HeroList>
+                    {heroes?.map(hero => (
+                        <HeroCard hero={hero} key={hero.id} />
+                    ))}
+                </HeroList>
+            </Content>
+        </Container>
     );
 }
