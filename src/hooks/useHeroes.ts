@@ -16,8 +16,6 @@ export const useHeroes = (url: string): IUseGetRequest => {
         {
             refetchOnWindowFocus: false,
             retry: false,
-            staleTime: 2000
-
         }
     )
 

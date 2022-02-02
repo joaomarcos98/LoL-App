@@ -5,6 +5,7 @@ import favoriteEmpty from "../../ui/assets/favorite_border.svg"
 import favoriteFull from "../../ui/assets/favorite.svg"
 import useFavorite from "../../store/useFavorite";
 import { memo } from "react";
+import { useStorage } from "../../hooks/useLocalStore";
 
 
 interface HeroCardProps {
@@ -15,10 +16,12 @@ let imgUrl = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
 
 export const HeroCard = memo(({ hero }: HeroCardProps) => {
-    
-    const favoritesHeroes = useFavorite(state => state.favorites); 
+
+    const favoritesHeroes = useFavorite(state => state.favorites);
     const addFavoriteHero = useFavorite(state => state.addFavorite);
     const removeFavoriteHero = useFavorite(state => state.removeFavorite);
+
+    const { setFavorites } = useStorage();
 
     const heroIsAlreadyFavorite = !!favoritesHeroes.find(item =>
         item.id === hero.id)
@@ -28,6 +31,7 @@ export const HeroCard = memo(({ hero }: HeroCardProps) => {
             removeFavoriteHero(hero);
         } else {
             addFavoriteHero(hero);
+            setFavorites([...favoritesHeroes, hero])
         }
     }
 
