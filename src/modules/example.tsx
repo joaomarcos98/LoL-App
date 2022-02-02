@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { HeroCard, HeroList } from "../components";
+import { Loading } from "../components/Loading";
+import { LoadingCard } from "../components/LoadingCard";
 import { useHeroes } from "../hooks/useHeroes";
 import { Hero } from "../models/Champion";
 
@@ -10,9 +12,7 @@ import { Container, Content } from "./styles";
 
 const url = `http://ddragon.leagueoflegends.com/cdn/12.2.1/data/pt_BR/champion.json`;
 
-export const Example = () => {
-
-    const favHeroes = useFavorite(state => state.favorites);
+export const Example = memo(() => {
 
     const [heroes, setHeroes] = useState<Hero[]>([]);
 
@@ -32,12 +32,17 @@ export const Example = () => {
     return (
         <Container>
             <Content>
-                <HeroList>
-                    {heroes?.map(hero => (
-                        <HeroCard hero={hero} key={hero.id} />
-                    ))}
-                </HeroList>
+                {
+                    isLoading
+                        ? <Loading />
+                        : <HeroList>
+                            {heroes?.map(hero => (
+                                <HeroCard hero={hero} key={hero.id} />
+                                // <LoadingCard key={hero.id} />
+                            ))}
+                        </HeroList>
+                }
             </Content>
         </Container>
     );
-}
+})

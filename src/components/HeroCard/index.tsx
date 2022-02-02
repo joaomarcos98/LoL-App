@@ -4,6 +4,7 @@ import { HeroCardStyle } from "./styled";
 import favoriteEmpty from "../../ui/assets/favorite_border.svg"
 import favoriteFull from "../../ui/assets/favorite.svg"
 import useFavorite from "../../store/useFavorite";
+import { memo } from "react";
 
 
 interface HeroCardProps {
@@ -12,9 +13,10 @@ interface HeroCardProps {
 
 let imgUrl = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
-export const HeroCard = ({ hero }: HeroCardProps) => {
 
-    const favoritesHeroes = useFavorite(state => state.favorites);
+export const HeroCard = memo(({ hero }: HeroCardProps) => {
+    
+    const favoritesHeroes = useFavorite(state => state.favorites); 
     const addFavoriteHero = useFavorite(state => state.addFavorite);
     const removeFavoriteHero = useFavorite(state => state.removeFavorite);
 
@@ -29,8 +31,8 @@ export const HeroCard = ({ hero }: HeroCardProps) => {
         }
     }
 
-    const numUrl = ("0000" + hero.key).slice(-4);
-    const url = `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${numUrl}/ability_${numUrl}_Q1.webm`
+    // const numUrl = ("0000" + hero.key).slice(-4);
+    // const url = `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${numUrl}/ability_${numUrl}_Q1.webm`
 
     return (
         <HeroCardStyle>
@@ -46,5 +48,5 @@ export const HeroCard = ({ hero }: HeroCardProps) => {
             <h4>{hero.title}</h4>
         </HeroCardStyle>
     )
-}
+})
 

@@ -17,7 +17,7 @@ export const HeroCardStyle = styled.div`
     }
 
     h4{
-        margin: 8px;
+        margin-top: 8px;
         font-size: 1.2rem;
         color: #121212;
         margin-right: 12px;

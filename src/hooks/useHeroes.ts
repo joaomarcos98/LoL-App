@@ -10,12 +10,14 @@ interface IUseGetRequest {
 export const useHeroes = (url: string): IUseGetRequest => {
 
     const { isLoading, error, data }: UseQueryResult<Object, Error> = useQuery("champions", () =>
-        fetch(url).then(res =>
+        fetch(url).then(res => 
             res.json()
         ),
         {
             refetchOnWindowFocus: false,
-            retry: false
+            retry: false,
+            staleTime: 2000
+
         }
     )
 
