@@ -5,21 +5,23 @@ export const HeroCardStyle = styled.div`
     align-items: center;
     flex-direction: column;
     position: relative;
+    background-color: #030303;
+    padding-bottom: 1rem;
 
     max-width: 320px;
 
     h2{
         position: absolute;
         color: #fff;
-        bottom: 55px;
+        bottom: 85px ;
         z-index: 3;
         text-shadow: 1px 1px 5px #121212;
     }
 
     h4{
-        margin-top: 8px;
+        margin: 10px 0 5px;
         font-size: 1.2rem;
-        color: #121212;
+        color: #cacaca;
         margin-right: 12px;
     }
 
@@ -33,5 +35,15 @@ export const HeroCardStyle = styled.div`
             cursor: pointer;
             filter: drop-shadow(1px 1px 5px #fc03a1);
         }
+    }
+`
+
+export const BadgeList = styled.div`
+    display: flex;
+    width: 100px;
+    justify-content: space-around;
+
+    img{
+        width: 35px;
     }
 `

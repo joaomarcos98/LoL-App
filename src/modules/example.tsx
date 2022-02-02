@@ -1,7 +1,6 @@
 import { memo, useEffect, useState } from "react";
 import { HeroCard, HeroList } from "../components";
 import { Loading } from "../components/Loading";
-import { LoadingCard } from "../components/LoadingCard";
 import { useHeroes } from "../hooks/useHeroes";
 import { useStorage } from "../hooks/useLocalStore";
 import { Hero } from "../models/Champion";

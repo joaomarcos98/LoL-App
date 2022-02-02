@@ -4,8 +4,9 @@ import { Hero } from "../models/Champion";
 type Favorites = Hero[] | []
 
 interface useStorage {
-    getFavorites: () => Favorites | []; 
-    setFavorites: (list: Hero[]) => void
+    getFavorites: () => Favorites;
+    setFavorites: (list: Hero[]) => void;
+    removeFavorites: (list: Hero[], hero: Hero) => void
 }
 
 export const useStorage = (): useStorage => {
@@ -24,5 +25,12 @@ export const useStorage = (): useStorage => {
         localStorage.setItem("favorites", JSON.stringify(list))
     }
 
-    return { getFavorites, setFavorites };
+    const removeFavorites = (list: Hero[], hero: Hero) => {
+        const favorites = list.filter(item =>
+            item.id !== hero.id)
+
+            setFavorites(favorites)
+    }
+
+    return { getFavorites, setFavorites, removeFavorites };
 }

@@ -1,11 +1,12 @@
 import { Hero } from "../../models/Champion";
-import { HeroCardStyle } from "./styled";
+import { BadgeList, HeroCardStyle } from "./styled";
 
 import favoriteEmpty from "../../ui/assets/favorite_border.svg"
 import favoriteFull from "../../ui/assets/favorite.svg"
 import useFavorite from "../../store/useFavorite";
 import { memo } from "react";
 import { useStorage } from "../../hooks/useLocalStore";
+import { Badge } from "../Badge";
 
 
 interface HeroCardProps {
@@ -17,11 +18,14 @@ let imgUrl = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
 export const HeroCard = memo(({ hero }: HeroCardProps) => {
 
+    console.log(hero);
+
+
     const favoritesHeroes = useFavorite(state => state.favorites);
     const addFavoriteHero = useFavorite(state => state.addFavorite);
     const removeFavoriteHero = useFavorite(state => state.removeFavorite);
 
-    const { setFavorites } = useStorage();
+    const { setFavorites, removeFavorites } = useStorage();
 
     const heroIsAlreadyFavorite = !!favoritesHeroes.find(item =>
         item.id === hero.id)
@@ -29,6 +33,8 @@ export const HeroCard = memo(({ hero }: HeroCardProps) => {
     const handleFavoriteHero = () => {
         if (heroIsAlreadyFavorite) {
             removeFavoriteHero(hero);
+            removeFavorites([...favoritesHeroes], hero)
+
         } else {
             addFavoriteHero(hero);
             setFavorites([...favoritesHeroes, hero])
@@ -50,6 +56,13 @@ export const HeroCard = memo(({ hero }: HeroCardProps) => {
                 }
             </div>
             <h4>{hero.title}</h4>
+            <BadgeList>
+                {
+                    hero.tags.map(tag => (
+                        <Badge category={tag} key={`${hero.id}`}/>
+                    ))
+                }
+            </BadgeList>
         </HeroCardStyle>
     )
 })
