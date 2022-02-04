@@ -1,11 +1,10 @@
 const LightTheme = {
     name: "dark",
     colors: {
-        primary: "",
-        secondary: "",
-
-        bgColor: "",
-        textColor: ""
+        HeaderBgColor: "#cacaca",
+        ContainerColor: "#fafafa",
+        ContentColor: "#cdcdcd",
+        textColor: "#232323"
     }
 }
 

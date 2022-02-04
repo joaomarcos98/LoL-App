@@ -1,11 +1,10 @@
 const DarkTheme = {
     name: "dark",
     colors: {
-        primary: "",
-        secondary: "",
-
-        bgColor: "",
-        textColor: ""
+        HeaderBgColor: "#101010",
+        ContainerColor: "#181818",
+        ContentColor: "#101010",
+        textColor: "#fafafa"
     }
 }
 

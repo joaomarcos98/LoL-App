@@ -18,9 +18,6 @@ let imgUrl = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
 export const HeroCard = memo(({ hero }: HeroCardProps) => {
 
-    console.log(hero);
-
-
     const favoritesHeroes = useFavorite(state => state.favorites);
     const addFavoriteHero = useFavorite(state => state.addFavorite);
     const removeFavoriteHero = useFavorite(state => state.removeFavorite);

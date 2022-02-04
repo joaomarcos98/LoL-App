@@ -10,7 +10,7 @@ export const HeroCardStyle = styled.div`
 
     max-width: 320px;
 
-    &:hover {
+    /* &:hover {
         transform: translateY(-10px);
     }
 
@@ -25,7 +25,7 @@ export const HeroCardStyle = styled.div`
                 top: 0;
             }
         }
-    }
+    } */
 
     h2{
         position: absolute;
