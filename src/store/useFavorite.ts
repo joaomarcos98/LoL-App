@@ -1,5 +1,5 @@
 import create from "zustand";
-import { Hero } from "../models/Champion";
+import { Hero } from "../types/Champion";
 
 interface FavoriteState {
     favorites: Hero[] | [];

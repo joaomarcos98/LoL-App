@@ -1,4 +1,4 @@
-import { Hero } from "../models/Champion";
+import { Hero } from "../types/Champion";
 
 
 type Favorites = Hero[] | []

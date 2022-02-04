@@ -3,7 +3,7 @@ import { HeroCard, HeroList } from "../components";
 import { Loading } from "../components/Loading";
 import { useHeroes } from "../hooks/useHeroes";
 import { useStorage } from "../hooks/useLocalStore";
-import { Hero } from "../models/Champion";
+import { Hero } from "../types/Champion";
 
 import useFavorite from "../store/useFavorite";
 

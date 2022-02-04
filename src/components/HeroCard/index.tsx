@@ -1,4 +1,4 @@
-import { Hero } from "../../models/Champion";
+import { Hero } from "../../types/Champion";
 import { BadgeList, HeroCardStyle } from "./styled";
 
 import favoriteEmpty from "../../ui/assets/favorite_border.svg"
@@ -59,7 +59,7 @@ export const HeroCard = memo(({ hero }: HeroCardProps) => {
             <BadgeList>
                 {
                     hero.tags.map(tag => (
-                        <Badge category={tag} key={`${hero.id}`}/>
+                        <Badge category={tag} key={`${hero.id}${tag}`}/>
                     ))
                 }
             </BadgeList>

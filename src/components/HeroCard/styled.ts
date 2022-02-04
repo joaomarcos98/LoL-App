@@ -10,6 +10,23 @@ export const HeroCardStyle = styled.div`
 
     max-width: 320px;
 
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    &:not(:hover) {
+        animation: down;
+
+        @keyframes down {
+            from {
+                top: -10px
+            }
+            to {
+                top: 0;
+            }
+        }
+    }
+
     h2{
         position: absolute;
         color: #fff;
