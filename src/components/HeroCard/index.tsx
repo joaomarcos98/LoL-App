@@ -3,7 +3,7 @@ import { BadgeList, HeroCardStyle } from "./styled";
 
 import favoriteEmpty from "../../ui/assets/favorite_border.svg"
 import favoriteFull from "../../ui/assets/favorite.svg"
-import useFavorite from "../../store/useFavorite";
+import useFavorite from "../../stores/useFavorite";
 import { memo } from "react";
 import { useStorage } from "../../hooks/useLocalStore";
 import { Badge } from "../Badge";

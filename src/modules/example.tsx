@@ -5,7 +5,7 @@ import { useHeroes } from "../hooks/useHeroes";
 import { useStorage } from "../hooks/useLocalStore";
 import { Hero } from "../types/Champion";
 
-import useFavorite from "../store/useFavorite";
+import useFavorite from "../stores/useFavorite";
 
 import { Container, Content } from "./styles";
 
