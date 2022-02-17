@@ -1,16 +1,7 @@
-import { LoadingCard } from "../LoadingCard"
-import { LoadingStyle } from "./style"
+import { LoadingStyle } from "./style";
+import LoadingIcon from "../../ui/assets/loading.svg";
 
 export const Loading = () =>
     <LoadingStyle>
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
+        <img src={LoadingIcon} alt="Carregando" />
     </LoadingStyle>

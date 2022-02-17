@@ -10,12 +10,17 @@ export const LoadingStyle = styled.div`
     flex-wrap: wrap;
 
     img {
-        width: 300px;
-        animation: grow 2s infinite;
+        margin-top: 64px;
+        width: 100px;
+        animation: rotating 2s linear infinite;
     }
 
-    @keyframes grow {
-        from {width: 300px}
-        to{width:600px}
+    @keyframes rotating {
+        from{
+            transform: rotate(0deg)
+        }
+        to{
+            transform: rotate(360deg);
+        }
     }
 `

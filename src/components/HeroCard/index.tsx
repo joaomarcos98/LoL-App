@@ -13,7 +13,7 @@ interface HeroCardProps {
     hero: Hero
 }
 
-let imgUrl = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
+let URL = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
 
 export const HeroCard = memo(({ hero }: HeroCardProps) => {
@@ -38,12 +38,9 @@ export const HeroCard = memo(({ hero }: HeroCardProps) => {
         }
     }
 
-    // const numUrl = ("0000" + hero.key).slice(-4);
-    // const url = `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${numUrl}/ability_${numUrl}_Q1.webm`
-
     return (
         <HeroCardStyle>
-            <img src={`${imgUrl}${hero.id}_0.jpg`} alt={hero.name} />
+            <img src={`${URL}${hero.id}_0.jpg`} alt={hero.name} />
             <h2 >{hero.name}</h2>
             <div className="favorite">
                 {

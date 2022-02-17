@@ -5,6 +5,7 @@ export const Container = styled.main`
     display: flex;
     justify-content: center;
     background-color: ${props => props.theme.colors.ContainerColor};
+    min-height: calc(100vh - 69px);
 
 `;
 

@@ -16,7 +16,7 @@ export const HeroCardStyle = styled.div`
     &:hover{
         cursor: pointer;
         
-        box-shadow: 0 0 10px #00cef7;
+        box-shadow: 0 0 10px #03c2fc;
     }
 
     &>img{
