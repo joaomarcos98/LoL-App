@@ -21,7 +21,7 @@ export const Header = memo(() => {
                     checked={isDarkTheme}
                     height={20}
                     width={40}
-                    onColor="#2b0270"
+                    onColor="#a4a4a4"
                     offColor="#a4a4a4"
                     checkedIcon={false}
                     uncheckedIcon={false}

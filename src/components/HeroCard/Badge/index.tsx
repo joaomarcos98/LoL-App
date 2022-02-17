@@ -1,10 +1,10 @@
-import allIcon from "../../ui/assets/all_icon.png";
-import assassinIcon from "../../ui/assets/assassin_icon.png";
-import fighterIcon from "../../ui/assets/fighter_icon.png";
-import mageIcon from "../../ui/assets/mage_icon.png";
-import marksmanIcon from "../../ui/assets/marksman_icon.png";
-import supportIcon from "../../ui/assets/support_icon.png";
-import tankIcon from "../../ui/assets/tank_icon.png";
+import allIcon from "../../../ui/assets/all_icon.png";
+import assassinIcon from "../../../ui/assets/assassin_icon.png";
+import fighterIcon from "../../..//ui/assets/fighter_icon.png";
+import mageIcon from "../../../ui/assets/mage_icon.png";
+import marksmanIcon from "../../../ui/assets/marksman_icon.png";
+import supportIcon from "../../../ui/assets/support_icon.png";
+import tankIcon from "../../../ui/assets/tank_icon.png";
 
 type Categorys = {
     Assassin: string,

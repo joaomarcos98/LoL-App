@@ -6,7 +6,7 @@ import favoriteFull from "../../ui/assets/favorite.svg"
 import useFavorite from "../../stores/useFavorite";
 import { memo } from "react";
 import { useStorage } from "../../hooks/useLocalStore";
-import { Badge } from "../Badge";
+import { Badge } from "./Badge";
 
 
 interface HeroCardProps {

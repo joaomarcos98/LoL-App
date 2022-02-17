@@ -4,7 +4,10 @@ const DarkTheme = {
         HeaderBgColor: "#101010",
         ContainerColor: "#181818",
         ContentColor: "#101010",
-        textColor: "#fafafa"
+        textColor: "#fafafa",
+        scrollbarColor: "#303030",
+        scrollbarThumbColor: "#505050",
+        scrollbarThumbHoverColor: "#656565"
     }
 }
 

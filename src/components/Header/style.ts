@@ -4,9 +4,12 @@ import styled from "styled-components";
 export const HeaderStyle = styled.header`
 
     background-color: ${props => props.theme.colors.HeaderBgColor};
-    padding: 1rem;
+    display: flex;
+    justify-content: center;
 
-    div{
+    &>div{
+        padding: 1rem;
+        width: 1700px;
         display: flex;
         justify-content: space-between;
         align-items: center;

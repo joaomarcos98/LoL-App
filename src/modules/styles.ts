@@ -14,4 +14,8 @@ export const Content = styled.div`
     padding: 1rem 0;
     
     background-color: ${props => props.theme.colors.ContentColor};
+
+    h3{
+        color: ${props => props.theme.colors.textColor};
+    }
 `;
